@@ -1,0 +1,251 @@
+{
+  "transcript": "testing testing one two three. Can you read my lips? ",
+  "words": [
+    {
+      "alignedWord": "testing",
+      "case": "success",
+      "end": 2.91,
+      "endOffset": 7,
+      "phones": [
+        {
+          "duration": 0.1,
+          "phone": "t_B"
+        },
+        {
+          "duration": 0.1,
+          "phone": "eh_I"
+        },
+        {
+          "duration": 0.1,
+          "phone": "s_I"
+        },
+        {
+          "duration": 0.07,
+          "phone": "t_I"
+        },
+        {
+          "duration": 0.06,
+          "phone": "ih_I"
+        },
+        {
+          "duration": 0.12,
+          "phone": "ng_E"
+        }
+      ],
+      "start": 2.36,
+      "startOffset": 0,
+      "word": "testing"
+    },
+    {
+      "alignedWord": "testing",
+      "case": "success",
+      "end": 3.55,
+      "endOffset": 15,
+      "phones": [
+        {
+          "duration": 0.07,
+          "phone": "t_B"
+        },
+        {
+          "duration": 0.11,
+          "phone": "eh_I"
+        },
+        {
+          "duration": 0.09,
+          "phone": "s_I"
+        },
+        {
+          "duration": 0.07,
+          "phone": "t_I"
+        },
+        {
+          "duration": 0.11,
+          "phone": "ih_I"
+        },
+        {
+          "duration": 0.16,
+          "phone": "ng_E"
+        }
+      ],
+      "start": 2.94,
+      "startOffset": 8,
+      "word": "testing"
+    },
+    {
+      "alignedWord": "one",
+      "case": "success",
+      "end": 3.88,
+      "endOffset": 19,
+      "phones": [
+        {
+          "duration": 0.14,
+          "phone": "w_B"
+        },
+        {
+          "duration": 0.09,
+          "phone": "ah_I"
+        },
+        {
+          "duration": 0.09,
+          "phone": "n_E"
+        }
+      ],
+      "start": 3.56,
+      "startOffset": 16,
+      "word": "one"
+    },
+    {
+      "alignedWord": "two",
+      "case": "success",
+      "end": 4.18,
+      "endOffset": 23,
+      "phones": [
+        {
+          "duration": 0.12,
+          "phone": "t_B"
+        },
+        {
+          "duration": 0.18,
+          "phone": "uw_E"
+        }
+      ],
+      "start": 3.88,
+      "startOffset": 20,
+      "word": "two"
+    },
+    {
+      "alignedWord": "three",
+      "case": "success",
+      "end": 4.74,
+      "endOffset": 29,
+      "phones": [
+        {
+          "duration": 0.09,
+          "phone": "th_B"
+        },
+        {
+          "duration": 0.09,
+          "phone": "r_I"
+        },
+        {
+          "duration": 0.33,
+          "phone": "iy_E"
+        }
+      ],
+      "start": 4.23,
+      "startOffset": 24,
+      "word": "three"
+    },
+    {
+      "alignedWord": "can",
+      "case": "success",
+      "end": 6.5200000000000005,
+      "endOffset": 34,
+      "phones": [
+        {
+          "duration": 0.12,
+          "phone": "k_B"
+        },
+        {
+          "duration": 0.05,
+          "phone": "ae_I"
+        },
+        {
+          "duration": 0.07,
+          "phone": "n_E"
+        }
+      ],
+      "start": 6.28,
+      "startOffset": 31,
+      "word": "Can"
+    },
+    {
+      "alignedWord": "you",
+      "case": "success",
+      "end": 6.68,
+      "endOffset": 38,
+      "phones": [
+        {
+          "duration": 0.07,
+          "phone": "y_B"
+        },
+        {
+          "duration": 0.09,
+          "phone": "uw_E"
+        }
+      ],
+      "start": 6.52,
+      "startOffset": 35,
+      "word": "you"
+    },
+    {
+      "alignedWord": "read",
+      "case": "success",
+      "end": 7.12,
+      "endOffset": 43,
+      "phones": [
+        {
+          "duration": 0.09,
+          "phone": "r_B"
+        },
+        {
+          "duration": 0.11,
+          "phone": "iy_I"
+        },
+        {
+          "duration": 0.23,
+          "phone": "d_E"
+        }
+      ],
+      "start": 6.69,
+      "startOffset": 39,
+      "word": "read"
+    },
+    {
+      "alignedWord": "my",
+      "case": "success",
+      "end": 7.46,
+      "endOffset": 46,
+      "phones": [
+        {
+          "duration": 0.13,
+          "phone": "m_B"
+        },
+        {
+          "duration": 0.13,
+          "phone": "ay_E"
+        }
+      ],
+      "start": 7.2,
+      "startOffset": 44,
+      "word": "my"
+    },
+    {
+      "alignedWord": "lips",
+      "case": "success",
+      "end": 8.1,
+      "endOffset": 51,
+      "phones": [
+        {
+          "duration": 0.1,
+          "phone": "l_B"
+        },
+        {
+          "duration": 0.11,
+          "phone": "ih_I"
+        },
+        {
+          "duration": 0.13,
+          "phone": "p_I"
+        },
+        {
+          "duration": 0.3,
+          "phone": "s_E"
+        }
+      ],
+      "start": 7.46,
+      "startOffset": 47,
+      "word": "lips"
+    }
+  ]
+}
