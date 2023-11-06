@@ -57,10 +57,11 @@ def extract_frames(vid_path, output_dir):
 
         frame_count += 1
     
-    cap.release()
 
     print(f"Extracted {frame_count} frames from {vid_path}")
     print(f"The frames_per_sec are {cap.get(cv2.CAP_PROP_FPS)}")
+
+    cap.release()
 
     return frame_count
 
@@ -111,13 +112,16 @@ def get_lips(input_images_dir, output_images_dir, DEBUG=True):
 	
     print("Finished extracting those nice smoochers!!!")
 
-def get_phoneme_for_every_frame(json_filepath, num_frames, frame_rate = 30):
+def get_phoneme_for_every_frame(json_filepath, num_frames, frame_rate = 25):
     phonemes = ["silence"]*num_frames
     with open(json_filepath, 'r') as json_file:
         json_data = json.load(json_file)
 
     for word in json_data["words"]:
-        phone_start_time = word["start"]
+        try:
+            phone_start_time = word["start"]
+        except:
+            continue
 
         for phone in word["phones"]:
             phone_end_time = phone_start_time + phone["duration"]
@@ -133,7 +137,7 @@ def get_phoneme_for_every_frame(json_filepath, num_frames, frame_rate = 30):
     return phonemes    
 
 def phoneme_visualization(lip_frames_dir, phonemes_per_frame, output_video_name):
-    final_width = 300
+    final_width = 200
     final_height = 150
 
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
@@ -152,11 +156,11 @@ def phoneme_visualization(lip_frames_dir, phonemes_per_frame, output_video_name)
         larger_image = np.full((final_height, final_width, 3), [141, 227, 240], dtype=np.uint8)
     
         x = int(final_width/2 - lips_width/2)
-        y = int(final_height/2 - lips_height/2)
+        y = int(final_height/2 - lips_height/2) - 10
         larger_image[y:y+lips_height, x:x+lips_width] = lips_img
 
         phoneme = phonemes_per_frame[frame_num]
-        cv2.putText(larger_image, f"GT Phoneme: {phoneme}", (int(final_width/2 - 100), final_height - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
+        cv2.putText(larger_image, f"GT Phoneme: {phoneme}", (int(10), final_height - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
 
         out.write(larger_image)
         frame_num += 1
