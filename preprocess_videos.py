@@ -155,7 +155,9 @@ if __name__ == "__main__":
 
     if (args.video_path != None):
         cropped_video_path = "cropped_video.mp4"
-        video_cropper(args.video_path, cropped_video_path, args.debug)
+        success, frames = video_cropper(args.video_path, cropped_video_path, args.debug)
+        if success:
+            save_as_npz(frames, "output.npz")
     else:
         # Do video cropper on every file in the dataset...
         video_files = find_files_with_extension(args.dataset_dir, "mp4")
