@@ -28,7 +28,7 @@ def create_mp3_file(filename, words, times):
         # new_speed = current_length_ms / desired_length_ms
         # print(new_speed)
         new_speed = 1
-        sound = speedup(sound, new_speed)
+        sound = speedup(sound, playback_speed=new_speed)
 
         # # First add silence from last word
         # silence_dur = (time[0] * 1000) - previous_word_end_time
