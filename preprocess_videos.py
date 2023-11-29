@@ -5,6 +5,7 @@ import argparse
 import os
 import fnmatch
 from tqdm import tqdm
+import shutil
 
 # Load the pre-trained facial landmark predictor from dlib
 predictor_path = "./models/shape_predictor_68_face_landmarks.dat"  # Download from http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
@@ -171,10 +172,19 @@ if __name__ == "__main__":
 
             npz_file_name = dir_name + "-" + file_name + ".npz"
             new_npz_file_path = os.path.join(output_dir, npz_file_name)
+
+            new_text_file_name = dir_name + "-" + file_name + ".txt"
+            new_text_file_path = os.path.join(output_dir, new_text_file_name)
+
+            
             
             success, frames = video_cropper(video_file, new_mp4_file_path, args.debug)
             if success:
                 save_as_npz(frames, new_npz_file_path)
+
+                # Copy the txt file to preprocessing_output folder...
+                old_text_file_path = os.path.splitext(video_file)[0] + ".txt"
+                shutil.copy(old_text_file_path, new_text_file_path)
 
         print("FINISHED PREPROCESSING SUCCESSFULLY!")
         print(f"Successfully preprocessed {len(video_files) - len(bad_crops)}/{len(video_files)} videos")
