@@ -13,6 +13,7 @@ face_detector = dlib.get_frontal_face_detector()
 landmark_predictor = dlib.shape_predictor(predictor_path)
 
 bad_crops = []
+last_landmarks = None
 
 past_angles = np.array([])
 moving_average_filter_length = 5
@@ -74,7 +75,10 @@ def video_cropper(video_path, output_video_path, debug):
     # Process each frame in the video
     i = 0
     while cap.isOpened():
+        if i % 100 == 0:
+            print(f"On frame {i}")
         ret, frame = cap.read()
+        
         
         if not ret:
             break
@@ -84,8 +88,12 @@ def video_cropper(video_path, output_video_path, debug):
         
         # Get facial landmarks
         landmarks = get_face_landmarks(frame)
+
+        if landmarks is None:
+            landmarks = last_landmarks
         
         if landmarks is not None:
+            last_landmarks = landmarks
             # Correct face rotation
             rotated_frame = correct_face_rotation(frame, landmarks)
             
@@ -109,13 +117,14 @@ def video_cropper(video_path, output_video_path, debug):
             # cv2.imshow("Facial Landmarks", frame)
             # cv2.imshow("Lips Crop", lips_crop)
         else:
+            print("There are no crops!")
             bad_crops.append(video_path)
-            if debug:
-                out.release()
-                os.remove(output_video_path)
-            return False, []
+            # if debug:
+            #     out.release()
+            #     os.remove(output_video_path)
+            # return False, []
 
-        
+        i += 1
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
